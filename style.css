@@ -1,85 +1,95 @@
+/* Importa la fuente Poppins desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+/* Reseteo general de estilos para evitar inconsistencias */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+    margin: 0; /* Quita margen por defecto */
+    padding: 0; /* Quita padding por defecto */
+    box-sizing: border-box; /* Mantiene el tamaño real incluyendo bordes */
+    text-decoration: none; /* Quita subrayados */
+    list-style: none; /* Quita viñetas */
 }
 
+/* Estilo general del cuerpo */
 body {
-    background-color: #242430;
-    font-family: 'Poppins', sans-serif;
+    background-color: #242430; /* Color de fondo oscuro */
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
 }
 
+/* Contenedor principal centrado */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centrado horizontal */
 }
 
+/* Configuración del header */
 .header {
-    display: flex;
-    align-items: center;
-    min-height: 80vh;
+    display: flex; /* Alineación flexible */
+    align-items: center; /* Centra verticalmente */
+    min-height: 80vh; /* Altura mínima del 80% de la pantalla */
 }
 
+/* Configuración de las diapositivas del slider */
 .swiper-slide {
-    padding: 0 80px 50px 80px;
+    padding: 0 80px 50px 80px; /* Espaciado interior */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centra contenido */
     align-items: center;
 }
 
-.swiper-button-prev::after {
-    font-size: 25px;
-}
-
+/* Tamaño de flechas del slider */
+.swiper-button-prev::after,
 .swiper-button-next::after {
     font-size: 25px;
 }
 
+/* Color de flecha izquierda */
 .swiper-button-prev {
     color: #FEFFFF;
 }
 
+/* Color de flecha derecha */
 .swiper-button-next {
     color: #FEFFFF;
 }
 
+/* Estilo de puntos que indican la paginación */
 .swiper-pagination-bullet {
     background-color: #747474;
     opacity: 0.7;
 }
 
+/* Punto activo de paginación */
 .swiper-pagination-bullet-active {
     background-color: #7270EC;
     opacity: 1;
 }
 
+/* Barra de navegación (menú) */
 .menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: absolute; /* Se ubica encima del contenido */
+    top: 0; left: 0; right: 0; /* Ocupa todo el ancho */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 1000; /* Por encima de todo */
 }
 
+/* Logo principal */
 .logo {
     font-size: 25px;
-    color: #7270EC;
+    color: #7270EC; /* Color morado */
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 800; /* Muy gruesa */
 }
 
+/* Items del menú */
 .menu .navbar ul li {
     position: relative;
-    float: left;
+    float: left; /* Alinea ítems horizontalmente */
 }
 
+/* Estilo de enlaces del menú */
 .menu .navbar ul li a {
     font-size: 18px;
     padding: 20px;
@@ -87,51 +97,61 @@ body {
     display: block;
 }
 
+/* Hover del menú */
 .menu .navbar ul li a:hover {
-    color: #7270EC;
+    color: #7270EC; /* Se pone morado */
 }
 
+/* Checkbox del menú hamburguesa (no visible) */
 #menu {
     display: none;
 }
 
+/* Icono del menú móvil */
 .menu-icono {
     width: 25px;
 }
 
+/* Label del menú móvil (botón hamburguesa) */
 .menu label {
     cursor: pointer;
-    display: none;
+    display: none; /* Oculto en escritorio */
 }
 
+/* Contenedor del submenu que contiene el carrito */
 .submenu {
     position: relative;
 }
 
+/* Carrito inicialmente oculto */
 .submenu #carrito {
     display: none;
 }
 
+/* Mostrar carrito cuando se hace hover */
 .submenu:hover #carrito {
     display: block;
     position: absolute;
     right: 0;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Fondo difuminado */
     top: 100%;
     z-index: 1;
-    background-color: #4E4B5076;
+    background-color: #4E4B5076; /* Transparente */
     padding: 20px;
-    min-width: 400px;
+    min-width: 400px; /* Tamaño mínimo */
 }
 
+/* Estilo general de tablas del carrito */
 table {
     width: 100%;
 }
 
+/* Estilo de celdas */
 th, td {
     color: #FEFFFF;
 }
 
+/* Botón borrar del carrito */
 .borrar {
     background-color: #7270EC;
     border-radius: 50%;
@@ -142,50 +162,60 @@ th, td {
     cursor: pointer;
 }
 
+/* Contenedor del contenido del header */
 .header-content {
     padding: 200px 0 100px 0;
 }
 
+/* Flex para separar texto e imagen */
 .header-info {
     display: flex;
 }
 
+/* Texto del header */
 .header-txt {
     width: 50%;
 }
 
+/* Título del header */
 .header-txt h1 {
     font-size: 50px;
     color: #FEFFFF;
     text-transform: capitalize;
 }
 
+/* Contenedor de imagen del header */
 .header-img {
     width: 50%;
     text-align: right;
 }
 
+/* Imagen del header */
 .header-img img {
     width: 500px;
 }
 
-.prices {
+/* Contenedor de precios */
+.precios {
     display: flex;
     margin: 20px 0;
 }
 
-.price-1 {
+/* Precio tachado */
+.precio-1 {
     font-size: 30px;
     color: #747474;
     text-decoration-line: line-through;
     margin-right: 25px;
 }
 
-.price-2 {
+/* Precio nuevo */
+.precio-2 {
     font-size: 30px;
     color: #7270EC !important;
 }
 
+/* Botón principal */
 .btn-1 {
     display: inline-block;
     background-color: #7270EC;
@@ -197,14 +227,17 @@ th, td {
     cursor: pointer;
 }
 
+/* Hover del btn-1 */
 .btn-1:hover {
     background-color: #6C69F9;
 }
 
+/* Separador HR */
 hr {
-    border: 1px solid #7A7B8F16;
+    border: 1px solid #7A7B8F16; /* Muy suave */
 }
 
+/* Sección de promociones */
 .promos {
     padding: 50px 0;
     text-align: center;
@@ -216,22 +249,26 @@ hr {
     margin-bottom: 35px;
 }
 
+/* Grid de categorías */
 .categorias {
     text-align: left;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* Contenedor de una categoría */
 .categoria {
     display: flex;
     align-items: center;
     padding: 35px;
 }
 
+/* Imagen de categoría */
 .categoria img {
     width: 150px;
 }
 
+/* Texto de categoría */
 .categoria-1 {
     width: 50%;
 }
@@ -251,6 +288,7 @@ hr {
     width: 50%;
 }
 
+/* Sección de productos */
 .products {
     padding: 50px 0;
 }
@@ -261,21 +299,25 @@ hr {
     margin-bottom: 70px;
 }
 
+/* Contenedor de cada producto */
 .product {
     text-align: center;
 }
 
+/* Imagen del producto */
 .product img {
     width: 150px;
     margin-bottom: 15px;
 }
 
+/* Nombre del producto */
 .product h3 {
     font-size: 18px;
     color: #FFFFFF;
     margin-bottom: 15px;
 }
 
+/* Descripción */
 .product p {
     color: #74788F;
     font-size: 16px;
@@ -286,6 +328,7 @@ hr {
     color: #7270EC !important;
 }
 
+/* Botón pequeño */
 .btn-3 {
     display: inline-block;
     padding: 10px 25px;
@@ -301,11 +344,13 @@ hr {
     background-color: #7270EC;
 }
 
+/* Footer */
 .footer {
     display: flex;
     padding: 30px 0;
 }
 
+/* Columna del footer */
 .link {
     width: 25%;
 }
@@ -327,15 +372,20 @@ hr {
     font-size: 16px;
 }
 
+/*   RESPONSIVE DESIGN MÓVILES   */
+
 @media (max-width: 991px) {
+
     .menu {
         padding: 20px;
     }
-    
+
+    /* Muestra botón hamburguesa */
     .menu label {
         display: initial;
     }
-    
+
+    /* Menú móvil */
     .menu .navbar {
         position: absolute;
         top: 100%;
@@ -344,118 +394,120 @@ hr {
         background-color: #181818;
         display: none;
     }
-    
+
     .menu .navbar ul li {
         width: 100%;
     }
-    
+
+    /* Mostrar menú móvil al activar checkbox */
     #menu:checked ~ .navbar {
         display: initial;
     }
-    
+
+    /* Ocultar logo para móviles */
     .logo {
         display: none;
     }
-    
+
     .submenu:hover #carrito {
         min-width: 100%;
     }
-    
+
     .mySwiper-1 {
         width: 300px;
     }
-    
+
     .swiper-slide {
         padding: 0 30px 50px 30px;
     }
-    
+
     .header-content {
         padding: 100px 0 50px 0;
     }
-    
+
     .header-info {
         padding: 0;
         flex-direction: column;
         text-align: center;
     }
-    
+
     .header-txt {
         width: 100%;
     }
-    
+
     .header-txt h1 {
         font-size: 40px;
     }
-    
+
     .header-img {
         width: 100%;
     }
-    
+
     .header-img img {
         width: 200px;
     }
-    
-    .prices {
+
+    .precios {
         flex-direction: column;
     }
-    
-    .price-1 {
+
+    .precio-1 {
         margin: 0;
     }
-    
+
     .btn-1 {
         margin: 20px 0;
     }
-    
+
     .promos {
         padding: 30px;
     }
-    
+
     .promos h2 {
         font-size: 40px;
         margin-bottom: 0;
     }
-    
+
     .categorias {
         grid-template-columns: repeat(1, 1fr);
     }
-    
+
     .categoria {
         flex-direction: column;
         text-align: center;
         padding: 20px;
     }
-    
+
     .categoria-1 {
         width: 100%;
         margin-bottom: 25px;
         order: -1;
     }
-    
+
     .categoria-img {
         width: 100%;
     }
-    
+
     .products {
         padding: 30px;
     }
-    
+
     .products h2 {
         font-size: 40px;
         margin-bottom: 40px;
     }
-    
+
     .footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
+
     .link {
         width: 100%;
         margin-bottom: 30px;
     }
-    
+
     .link:last-child {
         margin-bottom: 0;
     }
