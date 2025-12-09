@@ -1,34 +1,32 @@
-// Espera a que toda la página cargue antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', function() {
 
-    initSliders();     // Inicializa los sliders de Swiper
-    loadCart();        // Carga el carrito desde localStorage
-    setupEvents();     // Activa los eventos de los botones (agregar, borrar, vaciar)
+    initSliders(); 
+    loadCart();  
+    setupEvents();    
 });
 
-//     CONFIGURACIÓN DE SLIDERS
 function initSliders() {
 
-    // Inicializa el slider principal (mySwiper-1)
+    //Inicializa el slider principal
     new Swiper(".mySwiper-1", {
-        slidesPerView: 1,         // Muestra 1 slide a la vez
-        loop: true,               // Repite infinitamente
-        pagination: { el: ".swiper-pagination" },   // Indicadores de página
-        navigation: {             // Botones adelante / atrás
+        slidesPerView: 1, 
+        loop: true,             
+        pagination: { el: ".swiper-pagination" },
+        navigation: {         
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
         }
     });
 
-    // Inicializa el slider de productos (mySwiper-2)
+    //Inicializa el slider de productos
     new Swiper(".mySwiper-2", {
-        slidesPerView: 3,         // Muestra 3 productos por defecto
-        loop: true,               // Repite infinitamente
-        navigation: {             // Botones de navegación
+        slidesPerView: 3, 
+        loop: true,  
+        navigation: {         
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
         },
-        breakpoints: {            // Cambia la cantidad visible según la pantalla
+        breakpoints: {            //Cambia la cantidad visible según la pantalla
             0: { slidesPerView: 1 },
             520: { slidesPerView: 2 },
             950: { slidesPerView: 3 }
@@ -36,89 +34,79 @@ function initSliders() {
     });
 }
 
-
-// Array donde se guardan los productos agregados al carrito
 let cart = [];
 
 
-//     EVENTOS PRINCIPALES DE LA PÁGINA
+//Eventos principales de la página
 function setupEvents() {
-
-    // Detecta cualquier clic en toda la página
-    document.addEventListener('click', e => {
-
-        // Si el clic es en un botón de "Agregar al carrito"
+    document.addEventListener('click', e => { //Esto es una delegacion de eventos
         if (e.target.classList.contains('agregar-carrito')) {
-            e.preventDefault();      // Evita que se recargue la página
-            addToCart(e.target);     // Llama a la función para agregar el producto
+            e.preventDefault();
+            addToCart(e.target);    
         }
 
-        // Si el clic es en el botón "Vaciar carrito"
+        //Si el clic es en el botón "Vaciar carrito"
         if (e.target.id === 'vaciar-carrito') {
             e.preventDefault();
-            clearCart();             // Limpia todo el carrito
+            clearCart();             //Limpia todo el carrito
         }
 
-        // Si el clic es en una "X" de borrar producto
+        //Si el clic es en una "X" de borrar producto
         if (e.target.classList.contains('borrar')) {
             e.preventDefault();
-            removeFromCart(e.target.dataset.id); // Borra el producto por su ID
+            removeFromCart(e.target.dataset.id); //Borra el producto por su ID
         }
     });
 }
 
 
-//     AGREGA UN PRODUCTO AL CARRITO (leer datos del HTML)
+//Agrega un producto al carrito
 function addToCart(button) {
 
-    // Construye un objeto con los datos del producto
+    //Construye un objeto con los datos del producto
     const product = {
-        id: button.dataset.id,   // ID del producto según el HTML
+        id: button.dataset.id,   //ID del producto según el HTML
         name: button.closest('.categoria, .product')
-                     .querySelector('h3').textContent,   // Obtiene el título
+                     .querySelector('h3').textContent,   
         price: button.closest('.categoria, .product')
-                     .querySelector('.precio').textContent, // Obtiene el precio
+                     .querySelector('.precio').textContent, 
         image: button.closest('.categoria, .product')
-                     .querySelector('img').src  // Obtiene la imagen
+                     .querySelector('img').src 
     };
     
-    cart.push(product);    // Añade el producto al arreglo
-    saveCart();            // Guarda el carrito en localStorage
-    renderCart();          // Actualiza la tabla visual del carrito
-    alert('Producto agregado al carrito!');  // Mensaje al usuario
+    cart.push(product);    //Es un arreglo que añade el producto al final del carrito
+    saveCart();  
+    renderCart();         
+    alert('Producto agregado al carrito!');  
 }
 
-
-//     ELIMINA UN PRODUCTO DEL CARRITO POR SU ID
 function removeFromCart(id) {
 
-    // Filtra todos los productos excepto el que se quiere borrar
+    //Es un arreglo que filtra todos los productos excepto el que se quiere borrar
     cart = cart.filter(item => item.id !== id);
 
-    saveCart();   // Guarda los cambios en localStorage
-    renderCart(); // Vuelve a pintar el carrito en pantalla
+    saveCart();   
+    renderCart();
 }
 
-
-//     LIMPIA TODO EL CARRITO COMPLETO
 function clearCart() {
 
-    // Muestra una confirmación antes de borrar todo
+    //Muestra una confirmación antes de borrar todo
     if (confirm('¿Vaciar carrito?')) {
-        cart = [];        // Vacía el array
-        saveCart();       // Actualiza localStorage
-        renderCart();     // Actualiza la visualización
+        cart = [];        //Vacía el arreglo
+        saveCart();     
+        renderCart();   
     }
 }
 
 
-//     PINTA EL CARRITO EN LA TABLA HTML
+//Mostrar los productos en el carrito
 function renderCart() {
 
-    const tbody = document.querySelector('#lista-carrito tbody'); // Obtiene el cuerpo de la tabla
-    tbody.innerHTML = '';  // Limpia la tabla antes de volver a dibujar
+    const tbody = document.querySelector('#lista-carrito tbody'); //Obtiene el cuerpo de la tabla
+    tbody.innerHTML = '';  //Limpia la tabla para evitar duplicacion
     
-    // Recorre cada producto del carrito
+    //Por cada producto agregamos una fila HTML
     cart.forEach(item => {
         tbody.innerHTML += `
             <tr>
@@ -130,7 +118,7 @@ function renderCart() {
         `;
     });
     
-    // Si no hay productos en el carrito, muestra un mensaje
+    //Si no hay productos en el carrito, muestra un mensaje
     if (cart.length === 0) {
         tbody.innerHTML = `
             <tr>
@@ -143,19 +131,19 @@ function renderCart() {
 }
 
 
-//     GUARDA EL CARRITO COMPLETO EN localStorage
+//Guardar el carroto en localStorage
 function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart)); // Convierte a texto y guarda
+    localStorage.setItem('cart', JSON.stringify(cart)); //Convierte a texto y guarda
 }
 
 
-//     CARGA EL CARRITO DESDE localStorage
+//Cargar el carrito en localStorage
 function loadCart() {
 
-    const saved = localStorage.getItem('cart'); // Obtiene el carrito guardado
+    const saved = localStorage.getItem('cart'); //Es para recuperar el carrito al recargar la página
 
-    if (saved) {            // Si existía un carrito antes...
-        cart = JSON.parse(saved);  // Lo convierte de texto a array
-        renderCart();       // Lo muestra en pantalla
+    if (saved) {  //Si existía un carrito antes convierte el texto en arreglo
+        cart = JSON.parse(saved);  
+        renderCart();     
     }
 }

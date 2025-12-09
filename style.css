@@ -1,39 +1,36 @@
 /* Importa la fuente Poppins desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
-/* Reseteo general de estilos para evitar inconsistencias */
 * {
-    margin: 0; /* Quita margen por defecto */
-    padding: 0; /* Quita padding por defecto */
-    box-sizing: border-box; /* Mantiene el tamaño real incluyendo bordes */
-    text-decoration: none; /* Quita subrayados */
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none; 
     list-style: none; /* Quita viñetas */
 }
 
-/* Estilo general del cuerpo */
 body {
-    background-color: #242430; /* Color de fondo oscuro */
-    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    background-color: #242430;
+    font-family: 'Poppins', sans-serif; 
 }
 
 /* Contenedor principal centrado */
 .container {
-    max-width: 1200px; /* Ancho máximo */
-    margin: 0 auto; /* Centrado horizontal */
+    max-width: 1200px; 
+    margin: 0 auto;
 }
 
 /* Configuración del header */
 .header {
-    display: flex; /* Alineación flexible */
-    align-items: center; /* Centra verticalmente */
-    min-height: 80vh; /* Altura mínima del 80% de la pantalla */
+    display: flex; 
+    align-items: center; 
+    min-height: 80vh; 
 }
 
 /* Configuración de las diapositivas del slider */
 .swiper-slide {
-    padding: 0 80px 50px 80px; /* Espaciado interior */
+    padding: 0 80px 50px 80px; 
     display: flex;
-    justify-content: center; /* Centra contenido */
+    justify-content: center; 
     align-items: center;
 }
 
@@ -67,26 +64,26 @@ body {
 
 /* Barra de navegación (menú) */
 .menu {
-    position: absolute; /* Se ubica encima del contenido */
-    top: 0; left: 0; right: 0; /* Ocupa todo el ancho */
+    position: absolute; 
+    top: 0; left: 0; right: 0; 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    z-index: 1000; /* Por encima de todo */
+    justify-content: space-between; /*espacia elementos */
+    z-index: 1000; 
 }
 
 /* Logo principal */
 .logo {
     font-size: 25px;
-    color: #7270EC; /* Color morado */
+    color: #7270EC; 
     text-transform: uppercase;
-    font-weight: 800; /* Muy gruesa */
+    font-weight: 800; 
 }
 
 /* Items del menú */
 .menu .navbar ul li {
-    position: relative;
-    float: left; /* Alinea ítems horizontalmente */
+    position: relative; 
+    float: left; 
 }
 
 /* Estilo de enlaces del menú */
@@ -99,7 +96,7 @@ body {
 
 /* Hover del menú */
 .menu .navbar ul li a:hover {
-    color: #7270EC; /* Se pone morado */
+    color: #7270EC; 
 }
 
 /* Checkbox del menú hamburguesa (no visible) */
@@ -115,7 +112,7 @@ body {
 /* Label del menú móvil (botón hamburguesa) */
 .menu label {
     cursor: pointer;
-    display: none; /* Oculto en escritorio */
+    display: none; 
 }
 
 /* Contenedor del submenu que contiene el carrito */
@@ -136,9 +133,9 @@ body {
     backdrop-filter: blur(10px); /* Fondo difuminado */
     top: 100%;
     z-index: 1;
-    background-color: #4E4B5076; /* Transparente */
+    background-color: #4E4B5076; 
     padding: 20px;
-    min-width: 400px; /* Tamaño mínimo */
+    min-width: 400px; 
 }
 
 /* Estilo general de tablas del carrito */
@@ -253,7 +250,7 @@ hr {
 .categorias {
     text-align: left;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Crea un borde fino, sólido y con color específico */
 }
 
 /* Contenedor de una categoría */
@@ -334,7 +331,7 @@ hr {
     padding: 10px 25px;
     font-size: 14px;
     color: #FFFFFF;
-    border: 1px solid #7270EC;
+    border: 1px solid #7270EC; /* Crea un borde fino, sólido y con color específico */
     border-radius: 25px;
     margin-top: 15px;
     cursor: pointer;
