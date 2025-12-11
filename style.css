@@ -19,12 +19,6 @@ body {
     margin: 0 auto;
 }
 
-/* Configuración del header */
-.header {
-    display: flex; 
-    align-items: center; 
-    min-height: 80vh; 
-}
 
 /* Configuración de las diapositivas del slider */
 .swiper-slide {
@@ -62,15 +56,7 @@ body {
     opacity: 1;
 }
 
-/* Barra de navegación (menú) */
-.menu {
-    position: absolute; 
-    top: 0; left: 0; right: 0; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /*espacia elementos */
-    z-index: 1000; 
-}
+
 
 /* Logo principal */
 .logo {
@@ -369,7 +355,48 @@ hr {
     font-size: 16px;
 }
 
-/*   RESPONSIVE DESIGN MÓVILES   */
+.header {
+    position: relative;
+}
+/*Menu cambiado para agregar el sticky*/
+/* Menú pegajoso */
+.menu {
+    position: sticky;
+    top: 0;
+    background-color: #242430;
+    padding: 15px 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Descripcion para productos */
+.product-txt .descripcion {
+    font-size: 14px;
+    color: #ccc;
+    margin: 5px 0;
+}
+
+/*Animaciones al pasar el cursor sobre los juegos*/
+.product, .categoria {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover, .categoria:hover {
+    transform: translateY(-10px);
+}
+
+/*Pequeño arreglo para el header*/
+.proximamente {
+    font-size: 18px;
+    color: #7270EC;  
+    font-weight: 600;
+    margin-top: 10px;  
+    text-transform: uppercase;
+}
+
+/*Diseño resoinsivo  */
 
 @media (max-width: 991px) {
 
@@ -401,7 +428,7 @@ hr {
         display: initial;
     }
 
-    /* Ocultar logo para móviles */
+    /* Ocultar logo para celulares */
     .logo {
         display: none;
     }

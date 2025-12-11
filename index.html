@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <header class="header">
         <div class="menu container">
             <a href="#" class="logo">Game shop</a>
             <input type="checkbox" id="menu">
             <label for="menu"><img src="menu.png" class="menu-icono" alt=""></label>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
                 </ul>
             </nav>
             <div>
                 <ul>
-                    <li class="submenu">
+                    <li class="submenu" id="botonCarrito">
                         <img src="car.svg" id="img-carrito" alt="">
                         <div id="carrito">
                             <table id="lista-carrito">
@@ -42,7 +40,7 @@
                 </ul>
             </div>
         </div>
-
+    <header class="header" id="inicio">
         <div class="header-content container">
             <div class="swiper mySwiper-1">
                 <div class="swiper-wrapper">
@@ -54,6 +52,7 @@
                                     <p class="precio-1">$70</p>
                                     <p class="precio-2">$20</p>
                                 </div>
+                                  <p class="proximamente">Próximamente</p>
                             </div>
                             <div class="header-img">
                                 <img src="tlou.webp" alt="">
@@ -68,6 +67,7 @@
                                     <p class="precio-1">$60</p>
                                     <p class="precio-2">$25</p>
                                 </div>
+                                  <p class="proximamente">Próximamente</p>
                             </div>
                             <div class="header-img">
                                 <img src="GOW.jpg" alt="">
@@ -82,6 +82,7 @@
                                     <p class="precio-1">$70</p>
                                     <p class="precio-2">$30</p>
                                 </div>
+                                <p class="proximamente">Próximamente</p>
                             </div>
                             <div class="header-img">
                                 <img src="spiderman2.webp" alt="">
@@ -98,12 +99,14 @@
 
     <hr>
 
-    <section class="promos container" id="lista-1">
+    <section class="promos container" id="productos">
         <h2>Promociones</h2>
         <div class="categorias">
             <div class="categoria">
                 <div class="categoria-1">
                     <h3>Star wars jedi survivor</h3>
+                    <p class="descripcion">Survivor - Juego de acción en el universo Star Wars,
+                         combate con sable láser.</p>
                     <div class="precios">
                         <p class="precio-1">$70</p>
                         <p class="precio">$35</p>
@@ -117,6 +120,8 @@
             <div class="categoria">
                 <div class="categoria-1">
                     <h3>Ghost of yotei</h3>
+                    <p class="descripcion">Acción sigilosa y exploración en mundo
+                         abierto (similar a Ghost of Tsushima).</p>
                     <div class="precios">
                         <p class="precio-1">$70</p>
                         <p class="precio">$35</p>
@@ -130,6 +135,7 @@
             <div class="categoria">
                 <div class="categoria-1">
                     <h3>Hogwarts Legacy</h3>
+                    <p class="descripcion">RPG mágico, explora Hogwarts y aprende hechizos.</p>
                     <div class="precios">
                         <p class="precio-1">$60</p>
                         <p class="precio">$20</p>
@@ -143,6 +149,7 @@
             <div class="categoria">
                 <div class="categoria-1">
                     <h3>Grand Theft Auto 5</h3>
+                    <p class="descripcion">Mundo abierto, misiones criminales y conducción libre.</p>
                     <div class="precios">
                         <p class="precio-1">$30</p>
                         <p class="precio">$15</p>
@@ -168,6 +175,7 @@
                         <div class="product-txt">
                             <h3>Uncharted 4</h3>
                             <p>Calidad premium</p>
+                            <p class="descripcion">Aventura, tesoros y exploración alrededor del mundo.</p>
                             <p class="precio">$40</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="5">Agregar al carrito</a>
                         </div>
@@ -179,6 +187,7 @@
                         <div class="product-txt">
                             <h3>God of War</h3>
                             <p>Calidad premium</p>
+                            <p class="descripcion">Acción mitológica con Kratos y combate estratégico.</p>
                             <p class="precio">$40</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="6">Agregar al carrito</a>
                         </div>
@@ -190,6 +199,7 @@
                         <div class="product-txt">
                             <h3>Ghost Of Tsushima</h3>
                             <p>Calidad premium</p>
+                            <p class="descripcion">Samuráis, sigilo y lucha por la isla de Tsushima.</p>
                             <p class="precio">$40</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="7">Agregar al carrito</a>
                         </div>
@@ -201,6 +211,7 @@
                         <div class="product-txt">
                             <h3>Batman Arkham Knight</h3>
                             <p>Calidad premium</p>
+                            <p class="descripcion">Acción y sigilo en Gotham como Batman.</p>
                             <p class="precio">$30</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="8">Agregar al carrito</a>
                         </div>
@@ -224,6 +235,7 @@
                         <div class="product-txt">
                             <h3>Bloodborne</h3>
                             <p>Calidad premium</p>
+                             <p class="descripcion">RPG oscuro y desafiante con combates estratégicos.</p>
                             <p class="precio">$15</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="9">Agregar al carrito</a>
                         </div>
@@ -235,6 +247,7 @@
                         <div class="product-txt">
                             <h3>Injsutice 2</h3>
                             <p>Calidad premium</p>
+                             <p class="descripcion">Lucha de superhéroes y villanos de DC.</p>
                             <p class="precio">$15</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="10">Agregar al carrito</a>
                         </div>
@@ -246,6 +259,7 @@
                         <div class="product-txt">
                             <h3>Second son</h3>
                             <p>Calidad premium</p>
+                             <p class="descripcion">Aventura y poderes sobrenaturales en mundo abierto.</p>
                             <p class="precio">$15</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="11">Agregar al carrito</a>
                         </div>
@@ -257,6 +271,7 @@
                         <div class="product-txt">
                             <h3>Horizon</h3>
                             <p>Calidad premium</p>
+                             <p class="descripcion">Acción-RPG con robots gigantes y exploración de mundo abierto.</p>
                             <p class="precio">$15</p>
                             <a href="#" class="agregar-carrito btn-3" data-id="12">Agregar al carrito</a>
                         </div>
